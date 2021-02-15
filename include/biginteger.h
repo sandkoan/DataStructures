@@ -6,21 +6,25 @@
 #define DATASTRUCTURES_BIGINTEGER_H
 
 #include <string>
+namespace datastructures {
+    class BigInteger {
+    private:
+        std::string value;
+        bool sign = false;
+        unsigned int length;
 
-class BigInteger {
-private:
-    std::string value;
-    bool sign = false;
-    unsigned int length;
-    friend std::ostream& operator<<(std::ostream&, const BigInteger&);
+        friend std::ostream &operator<<(std::ostream &, const BigInteger &);
 
-public:
-    BigInteger();
-    BigInteger(long long num);
-    BigInteger(std::string s_num);
+    public:
+        BigInteger();
 
-    std::string getValue();
-    unsigned int getLength();
+        BigInteger(long long num);
+
+        BigInteger(std::string s_num);
+
+        std::string getValue();
+
+        unsigned int getLength();
+    };
 };
-
 #endif //DATASTRUCTURES_BIGINTEGER_H

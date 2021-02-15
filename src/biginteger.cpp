@@ -4,6 +4,10 @@
 
 #include "../include/biginteger.h"
 
+
+using namespace datastructures;
+
+
 BigInteger::BigInteger() {
     this->value = "0";
     this->length = 1;
@@ -11,23 +15,18 @@ BigInteger::BigInteger() {
 }
 
 BigInteger::BigInteger(long long num) {
-    if (num < 0) {
-        this->value = std::to_string(num).substr(1);
-        this->sign = true;
-    } else {
-        this->value = std::to_string(num).substr(1);
-    }
+    std::string s_num = std::to_string(num);
+
+    this->value = num < 0 ? s_num.substr(1) : s_num;
+    this->sign = num < 0;
     this->length = this->value.length();
 }
 
 BigInteger::BigInteger(std::string s_num) {
     int num = std::stoi(s_num);
-    if (num < 0) {
-        this->value = std::to_string(num).substr(1);
-        this->sign = true;
-    } else {
-        this->value = std::to_string(num).substr(1);
-    }
+
+    this->value = num < 0 ? s_num.substr(1) : s_num;
+    this->sign = num < 0;
     this->length = this->value.length();
 }
 
@@ -40,5 +39,5 @@ unsigned int BigInteger::getLength() {
 }
 
 std::ostream& operator<<(std::ostream &strm, const BigInteger &bi) {
-    return strm << bi.value;
+    return strm << *bi.getValue();
 }
