@@ -17,16 +17,16 @@ BigInteger::BigInteger() {
 BigInteger::BigInteger(long long num) {
     std::string s_num = std::to_string(num);
 
-    this->value = num < 0 ? s_num.substr(1) : s_num;
     this->sign = num < 0;
+    this->value = this->sign ? s_num.substr(1) : s_num;
     this->length = this->value.length();
 }
 
-BigInteger::BigInteger(std::string s_num) {
+BigInteger::BigInteger(const std::string& s_num) {
     int num = std::stoi(s_num);
 
-    this->value = num < 0 ? s_num.substr(1) : s_num;
     this->sign = num < 0;
+    this->value = this->sign ? s_num.substr(1) : s_num;
     this->length = this->value.length();
 }
 
@@ -39,5 +39,7 @@ unsigned int BigInteger::getLength() {
 }
 
 std::ostream& operator<<(std::ostream &strm, const BigInteger &bi) {
-    return strm << *bi.getValue();
+    return strm << bi*.getValue();
 }
+
+BigInteger::~BigInteger() = default;

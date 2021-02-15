@@ -8,23 +8,26 @@
 #include <string>
 namespace datastructures {
     class BigInteger {
-    private:
-        std::string value;
-        bool sign = false;
-        unsigned int length;
+        private:
+            std::string value;
+            bool sign = false;
+            unsigned int length;
 
-        friend std::ostream &operator<<(std::ostream &, const BigInteger &);
+            friend std::ostream &operator<<(std::ostream &, const BigInteger &);
 
-    public:
-        BigInteger();
+        public:
+            BigInteger();
+            ~BigInteger();
 
-        BigInteger(long long num);
 
-        BigInteger(std::string s_num);
+            BigInteger(long long num);
 
-        std::string getValue();
+            BigInteger(const std::string& s_num);
 
-        unsigned int getLength();
+            std::string getValue();
+
+            unsigned int getLength();
     };
 };
+
 #endif //DATASTRUCTURES_BIGINTEGER_H
