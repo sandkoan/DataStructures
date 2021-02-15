@@ -3,4 +3,4 @@ project(DataStructures)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DataStructures main.cpp)
+add_executable(DataStructures src/main.cpp include/biginteger.h src/biginteger.cpp)
