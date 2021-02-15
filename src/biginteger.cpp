@@ -11,20 +11,24 @@ BigInteger::BigInteger() {
 }
 
 BigInteger::BigInteger(long long num) {
-    this->value = std::to_string(num);
     if (num < 0) {
-        this->length = this->value.length() - 1;
+        this->value = std::to_string(num).substr(1);
         this->sign = true;
+    } else {
+        this->value = std::to_string(num).substr(1);
     }
+    this->length = this->value.length();
 }
 
 BigInteger::BigInteger(std::string s_num) {
-    this->value = s_num;
     int num = std::stoi(s_num);
     if (num < 0) {
-        this->length = this->value.length() - 1;
+        this->value = std::to_string(num).substr(1);
         this->sign = true;
+    } else {
+        this->value = std::to_string(num).substr(1);
     }
+    this->length = this->value.length();
 }
 
 void BigInteger::setValue(std::string value) {
