@@ -13,7 +13,7 @@ namespace datastructures {
             bool sign = false;
             unsigned int length;
 
-            friend std::ostream &operator<<(std::ostream &, const BigInteger &);
+//            friend std::ostream &operator<<(std::ostream &, const BigInteger &);
 
         public:
             BigInteger();

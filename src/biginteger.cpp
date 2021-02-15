@@ -38,8 +38,9 @@ unsigned int BigInteger::getLength() {
     return this->length;
 }
 
-std::ostream& operator<<(std::ostream &strm, const BigInteger &bi) {
-    return strm << bi*.getValue();
-}
+/*std::ostream &datastructures::operator<<(std::ostream &strm, const BigInteger &bi) {
+    return strm << bi.value;
+}*/
+
 
 BigInteger::~BigInteger() = default;

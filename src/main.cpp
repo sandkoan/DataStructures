@@ -2,18 +2,24 @@
 #include <string>
 #include "../include/biginteger.h"
 
+
+using namespace std;
+
 int main() {
-    std::string s = "-234343";
-    std::cout << s << "\n";
+    string s = "-234343";
+    cout << s << "\n";
 
     s = s.substr(1);
-    std::cout << (s);
+    cout << (s);
 
-    int num = std::stoi(s);
+    int num = stoi(s);
     num++;
-    printf("%d", num);
+    printf("%d\n", num);
 
 
+    auto v = new datastructures::BigInteger("-45454");
+
+    cout << v->getLength() << "\n";
 
     return 0;
 }
