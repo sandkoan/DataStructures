@@ -31,14 +31,14 @@ BigInteger::BigInteger(std::string s_num) {
     this->length = this->value.length();
 }
 
-void BigInteger::setValue(std::string value) {
-
-}
-
 std::string BigInteger::getValue() {
-    return this->value;
+    return this->sign ? "-" + this->value : this->value;
 }
 
-unsigned int BigInteger::getLength() const {
+unsigned int BigInteger::getLength() {
     return this->length;
+}
+
+std::ostream& operator<<(std::ostream &strm, const BigInteger &bi) {
+    return strm << bi.value;
 }

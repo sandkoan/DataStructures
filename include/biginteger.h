@@ -12,15 +12,15 @@ private:
     std::string value;
     bool sign = false;
     unsigned int length;
+    friend std::ostream& operator<<(std::ostream&, const BigInteger&);
+
 public:
     BigInteger();
     BigInteger(long long num);
     BigInteger(std::string s_num);
 
     std::string getValue();
-    void setValue(std::string value);
-
-    unsigned int getLength() const;
+    unsigned int getLength();
 };
 
 #endif //DATASTRUCTURES_BIGINTEGER_H
