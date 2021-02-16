@@ -22,7 +22,12 @@ int main() {
         printf("%c\n", digit);
     }
 
-    datastructures::HashTable myTable = new datastructures::HashTable(5);
+    datastructures::HashTable myTable(5);
+
+    myTable.insertEntry(3, 5);
+    myTable.insertEntry(4, 3434);
+
+    cout << myTable.getValue(3) << "\n";
 
     return 0;
 }

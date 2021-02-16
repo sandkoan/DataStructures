@@ -13,6 +13,8 @@ namespace datastructures {
         int BUCKET;
         std::vector<int> table;
 
+        inline int hash(int k) const;
+
     public:
         HashTable(int bsize);
 
@@ -20,7 +22,7 @@ namespace datastructures {
 
         void deleteEntry(int k);
 
-        inline int hash(int k) const;
+        int getValue(int k);
     };
 
     HashTable::HashTable(int bsize) {
@@ -34,6 +36,11 @@ namespace datastructures {
 
     void HashTable::deleteEntry(int k) {
         this->table.erase(this->table.begin() + hash(k));
+    }
+
+    int HashTable::getValue(int k) {
+        int hashKey = hash(k);
+        return this->table.at(hashKey);
     }
 
     inline int HashTable::hash(int k) const {
