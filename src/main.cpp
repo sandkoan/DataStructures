@@ -24,10 +24,13 @@ int main() {
 
     datastructures::HashTable myTable(5);
 
-    myTable.insertEntry(3, 5);
-    myTable.insertEntry(4, 3434);
+//    myTable.insertEntry(3, 5);
+//    myTable.insertEntry(4, 3434);
+//
+//    cout << myTable.getValue(3) << "\n";
 
-    cout << myTable.getValue(3) << "\n";
+    vector<int> v;
+//    v.insert(0, 1);
 
     return 0;
 }
