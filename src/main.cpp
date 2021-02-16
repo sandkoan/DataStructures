@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
-//#include "../include/biginteger.h"
-#include <bitset>
+
+#include "../include/hashtable.h"
+
 
 using namespace std;
 
@@ -20,6 +21,8 @@ int main() {
     for (auto &digit : s_num) {
         printf("%c\n", digit);
     }
+
+    datastructures::HashTable myTable = new datastructures::HashTable(5);
 
     return 0;
 }
