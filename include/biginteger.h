@@ -6,27 +6,23 @@
 #define DATASTRUCTURES_BIGINTEGER_H
 
 #include <string>
+#include <bitset>
+
+#define M 8
+
 namespace datastructures {
     class BigInteger {
         private:
-            std::string value;
-            bool sign = false;
-            unsigned int length;
-
-//            friend std::ostream &operator<<(std::ostream &, const BigInteger &);
+            bool isSigned=false;
+            bool barr[M];
 
         public:
             BigInteger();
             ~BigInteger();
 
-
-            BigInteger(long long num);
-
             BigInteger(const std::string& s_num);
 
-            std::string getValue();
-
-            unsigned int getLength();
+            std::string toString();
     };
 };
 

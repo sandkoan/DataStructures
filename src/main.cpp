@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "../include/biginteger.h"
-
+//#include "../include/biginteger.h"
+#include <bitset>
 
 using namespace std;
 
@@ -16,10 +16,10 @@ int main() {
     num++;
     printf("%d\n", num);
 
-
-    auto v = new datastructures::BigInteger("-45454");
-
-    cout << v->getLength() << "\n";
+    const std::string &s_num = "100011100";
+    for (auto &digit : s_num) {
+        printf("%c\n", digit);
+    }
 
     return 0;
 }

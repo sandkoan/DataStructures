@@ -7,40 +7,25 @@
 
 using namespace datastructures;
 
+/*
+ * Algo - get input in form of a string
+ * convert string to bit array
+ *  realloc more memory as needed
+ * perform necessary computations
+ * convert from bit array back to string
+ * */
 
 BigInteger::BigInteger() {
-    this->value = "0";
-    this->length = 1;
-    this->sign = false;
+    std::fill(this->barr, this->barr+M, false);
 }
 
-BigInteger::BigInteger(long long num) {
-    std::string s_num = std::to_string(num);
+BigInteger::BigInteger(const std::string &s_num) {
+    if(s_num[0] == '-') this->isSigned=true;
 
-    this->sign = num < 0;
-    this->value = this->sign ? s_num.substr(1) : s_num;
-    this->length = this->value.length();
+    for (auto &ch : s_num) {
+        
+    }
 }
-
-BigInteger::BigInteger(const std::string& s_num) {
-    int num = std::stoi(s_num);
-
-    this->sign = num < 0;
-    this->value = this->sign ? s_num.substr(1) : s_num;
-    this->length = this->value.length();
-}
-
-std::string BigInteger::getValue() {
-    return this->sign ? "-" + this->value : this->value;
-}
-
-unsigned int BigInteger::getLength() {
-    return this->length;
-}
-
-/*std::ostream &datastructures::operator<<(std::ostream &strm, const BigInteger &bi) {
-    return strm << bi.value;
-}*/
 
 
 BigInteger::~BigInteger() = default;
